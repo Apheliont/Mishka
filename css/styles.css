@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Open Sans";
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Regular.ttf"); }
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  src: url("../fonts/OpenSans-Bold.ttf"); }
+.page-wrapper {
+  width: 320px;
+  margin: 0 auto; }
+
+h2 {
+  font: 24px bold Verdana, sans-serif; }
+
+h3 {
+  font: 16px bold "Open Sans", sans-serif; }
+
+.btn {
+  height: 50px;
+  font: 16px bold "Open Sans", sans-serif;
+  text-transform: uppercase;
+  border: 2px solid black;
+  background-color: transparent;
+  outline: none; }
+
+.menu__list {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  list-style: none; }
+
+.menu__item {
+  flex-basis: 80px;
+  border-top: 1px solid grey;
+  text-align: center; }
+  .menu__item:last-child {
+    border-bottom: 1px solid grey; }
+
+.menu__link {
+  font: 16px bold Verdana, sans-serif;
+  color: black;
+  text-decoration: none; }
+
+.logo {
+  position: relative; }
+
+.logo__figure {
+  padding: 0;
+  margin: 0; }
+
+.logo__title {
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  width: 240px;
+  text-align: center; }
+
+.goods {
+  display: flex;
+  flex-direction: column; }
+
+.goods__item-01,
+.goods__item-02 {
+  display: flex;
+  flex-basis: 105px;
+  font: 18px bold Tahoma, sans-serif;
+  color: white; }
+
+.goods__item-01 {
+  background-color: #63d1bb; }
+
+.goods__item-02 {
+  background-color: #56c3b2; }
+
+.goods-of-the-week__subtitle {
+  color: #63d1bb; }
+
+.goods-of-the-week__figure {
+  padding: 0;
+  margin: 0; }
+
+.goods-of-the-week__properties td {
+  padding: 10px;
+  border-top: 1px solid rgba(128, 128, 128, 0.5); }
+.goods-of-the-week__properties td:first-child {
+  width: 95px; }
+
+.about__description {
+  font: 16px bold Verdana, sans-serif; }
+
+.map__figure {
+  padding: 0;
+  margin: 0; }
+
+/*# sourceMappingURL=styles.css.map */
