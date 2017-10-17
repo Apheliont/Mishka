@@ -1,3 +1,6 @@
+@import "normalize";
+@import "mixin";
+
 // === VARIABLE SECTION ===
 
 // --- colors ---
@@ -5,6 +8,7 @@ $green-01: #63d1bb; // Предметы интеръера, о нас, това�
 $green-02: #56c3b2; // Детские игрушки
 $white-01: white; // Текст раздела goods
 $black-01: black; // Текст раздела about
+$grey-01: #f1f1f1; // footer
 
 // --- elements color ---
 
@@ -13,6 +17,7 @@ $link-color: black;
 $goods-item-01: $green-01;
 $goods-item-02: $green-02;
 $goods-of-the-week: $green-01;
+$footer: $grey-01;
 // --------------------------------------------
 
 
@@ -30,12 +35,12 @@ $goods-of-the-week: $green-01;
 }
 
 
-$h2-font: 24px bold Verdana, sans-serif;
-$h3-font: 16px bold "Open Sans", sans-serif;
-$link-font: 16px bold Verdana, sans-serif;
-$goods-font: 18px bold Tahoma, sans-serif;
-$about-font: 16px bold Verdana, sans-serif;
-$btn-font: 16px bold "Open Sans", sans-serif;
+$h2-font: bold 24px Verdana, sans-serif;
+$h3-font: bold 16px "Open Sans", sans-serif;
+$link-font: bold 16px Verdana, sans-serif;
+$goods-font: bold 18px Tahoma, sans-serif;
+$about-font: bold 16px Verdana, sans-serif;
+$btn-font: bold 16px "Open Sans", sans-serif;
 // --------------------------------------------
 
 
@@ -44,6 +49,9 @@ $mobile-menu-item-height: 80px;
 $mobile-goods-height: 105px;
 $mobile-arrow-btn-height: 50px;
 $mobile-btn-height: 50px;
+$mobile-page-wrapper: 320px;
+$mobile-inner-wrapper: 260px;
+$mobile-footer-height: 80px;
 // --------------------------------------------
 // --------------------------------------------
 // --------------------------------------------
@@ -52,7 +60,12 @@ $mobile-btn-height: 50px;
 // --- LAYOUT ---
 
 .page-wrapper {
-  width: 320px;
+  width: $mobile-page-wrapper;
+  margin: 0 auto;
+}
+
+.inner-wrapper {
+  width: $mobile-inner-wrapper;
   margin: 0 auto;
 }
 // --------------------------------------------
@@ -68,12 +81,19 @@ h3 {
 }
 
 .btn {
+  display: inline-block;
+  width: 100%;
   height: $mobile-btn-height;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 12px;
   font: $btn-font;
+  color: black;
   text-transform: uppercase;
-  border: 2px solid black;
+  border: 1px solid #737373;
   background-color: transparent;
   outline: none;
+  text-decoration: none;
 }
 
 
@@ -86,8 +106,14 @@ h3 {
   list-style: none;
 }
 
+.menu__item-image {
+  float: left;
+}
+
 .menu__item {
+
   flex-basis: $mobile-menu-item-height;
+  line-height: $mobile-menu-item-height;
   border-top: 1px solid grey;
   text-align: center;
   &:last-child {
@@ -96,6 +122,8 @@ h3 {
 }
 
 .menu__link {
+  width: 100%;
+  display: inline-block;
   font: $link-font;
   color: $link-color;
   text-decoration: none;
@@ -122,17 +150,34 @@ h3 {
 
 // --- GOODS ---
 
-.goods {
-  display: flex;
-  flex-direction: column;
-}
-
 .goods__item-01,
 .goods__item-02 {
-  display: flex;
-  flex-basis: $mobile-goods-height;
+  box-sizing: border-box;
+  padding-top: 10px;
+  min-height: $mobile-goods-height;
   font: $goods-font;
   color: $white-01;
+}
+
+.goods__item-01:after,
+.goods__item-02:after {
+@include clearfix;
+}
+
+.goods__description {
+  float: left;
+  width: 60%;
+}
+
+.goods__figure {
+  float: right;
+  margin: 0;
+  padding: 15px;
+  width: 20%;
+}
+
+.goods__image {
+  width: 40px;
 }
 
 .goods__item-01 {
@@ -147,6 +192,11 @@ h3 {
 
 .goods-of-the-week__subtitle {
   color: $goods-of-the-week;
+  text-transform: uppercase;
+}
+
+.goods-of-the-week__description {
+  line-height: 1.75rem;
 }
 
 .goods-of-the-week__figure {
@@ -155,25 +205,162 @@ h3 {
 }
 
 .goods-of-the-week__properties {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
 
-  & td {
-    padding: 10px;
+  tr:not(:first-child) {
     border-top: 1px solid rgba(128, 128, 128, 0.5);
   }
-  & td:first-child {
+  tr:last-child {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  }
+  td {
+    padding: 10px 0;
+  }
+  td:first-child {
     width: 95px;
   }
 }
 
+.goods-of-the-week__price {
+  text-align: center;
+}
+
 // --- ABOUT ---
+
+.about__image {
+  margin: 0;
+}
 
 .about__description {
   font: $about-font;
 }
+
+// --- COMMENTS ---
+
+.comments__author-name {
+  font-weight: bold;
+}
+
+.arrow-buttons {
+  margin: 40px 0;
+}
+
+.arrow-buttons:after {
+@include clearfix;
+}
+
+.arrow-buttons__btn--left {
+  float: left;
+  width: 50%;
+  height: $mobile-arrow-btn-height;
+}
+
+.arrow-buttons__btn--right {
+  float: right;
+  width: 50%;
+  height: $mobile-arrow-btn-height;
+}
+
+.arrow-buttons__left-arrow,
+.arrow-buttons__right-arrow {
+  width: 70%;
+  height: 70%;
+  display: inline-block;
+  background-color: #000;
+
+}
+
+.arrow-buttons__left-arrow {
+  clip-path: polygon(40% 0%, 41% 35%, 100% 35%, 100% 65%, 40% 65%, 40% 100%, 0% 50%);
+}
+
+.arrow-buttons__right-arrow {
+  clip-path: polygon(0 35%, 60% 34%, 60% 0%, 100% 50%, 60% 100%, 59% 65%, 0 65%);
+}
+
+.comments__feedback {
+  line-height: 2rem;
+}
+
+// --- CONTACTS ---
+
+.contacts {
+  margin: 40px 0;
+}
+
+.contacts__title {
+  padding: 0;
+  margin: 0;
+}
+
+.contacts__email td {
+  line-height: 50px;
+  text-align: left;
+}
+
+.contacts__address td {
+  line-height: 20px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.write-to-us {
+  min-height: 130px;
+  box-sizing: border-box;
+  padding: 40px 0;
+}
+
 
 // --- MAP ---
 
 .map__figure {
   padding: 0;
   margin: 0;
+}
+
+
+// --- FOOTER ---
+
+.footer {
+  background-color: $footer;
+}
+
+
+.footer__flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-basis: $mobile-footer-height;
+  border-bottom: 1px solid rgba(185, 185, 185, 0.41);
+  width: 100%;
+}
+
+.social-links__btn {
+  margin: 10px;
+}
+
+.designer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-basis: $mobile-footer-height;
+  width: 100%;
+}
+
+.designer__description {
+  margin-left: 30px;
+}
+
+.designer__image {
+  height: 30px;
 }
