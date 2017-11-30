@@ -3,3 +3,8 @@
   display: table;
   clear: both;
 }
+
+@mixin inner-padding {
+  padding-left: 30px;
+  padding-right: 30px;
+}

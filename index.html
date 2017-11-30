@@ -6,202 +6,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<!--TODO Implement grid system
+    TODO make main and aside section
+    TODO get rid of outer gyometry in BEM blocks
+    TODO use picture tag instead of figure (<source srcset='address' media='(min-width: 768px)'
+    -->
+<body class="page">
 
 <div class="page-wrapper">
     <header class="page-header">
-
-
         <nav class="menu">
-            <div class="inner-wrapper">
-                <ul class="menu__list">
-
-                    <li class="menu__item">
-                        <a class="menu__link" href="#">Каталог товаров</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">Вязание на заказ</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#"><img class="menu__item-image" src="./images/common/search.svg"
-                                                                               alt="Поиск"><span class="menu__item-text">Поиск по сайту</span></a></li>
-                    <li class="menu__item"><a class="menu__link" href="#"><img class="menu__item-image" src="./images/common/cart.svg" alt="Корзина">Корзина</a></li>
-
-                </ul>
+            <ul class="menu__list menu__list--hidden">
+                <li class="menu__item">
+                    <a class="menu__link" href="#">Каталог товаров</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#">Вязание на заказ</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#">
+                    <img class="menu__item-image" src="./images/common/search.svg" alt="Поиск">
+                        <span class="menu__item-text">Поиск по сайту</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#">
+                        <img class="menu__item-image" src="./images/common/cart.svg" alt="Корзина">
+                        <span class="menu__item-text">Корзина</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="menu__logo">
+                <img class="menu__logo-image" src="./images/common/mishka.svg" alt="Мишка">
+                <button class="menu__button"></button>
             </div>
         </nav>
-
-
-        <div class="logo">
-            <figure class="logo__figure">
-                <img src="./images/index/hero-mobile.png" alt="Логотип">
-            </figure>
-            <h2 class="logo__title">Милые штуки ручной работы для дома</h2>
-        </div>
-
-
-        <div class="goods">
-
-            <article class="goods__item-01">
-                <div class="inner-wrapper">
-                    <p class="goods__description">Предметы интерьера</p>
-                    <figure class="goods__figure">
-                        <img class="goods__image" src="./images/index/lamp.svg" alt="Картинка интерьера">
-                    </figure>
-                </div>
-            </article>
-            <article class="goods__item-02">
-                <div class="inner-wrapper"><p class="goods__description">Детские игрушки</p>
-                    <figure class="goods__figure">
-                        <img class="goods__image" src="./images/index/lego.svg" alt="Картинка игрушек">
-                    </figure>
-                </div>
-            </article>
-        </div>
-
     </header>
 
-    <section class="goods-of-the-week">
-        <div class="inner-wrapper">
-            <h2 class="goods-of-the-week__title">Вязаные корзинки</h2>
-            <h3 class="goods-of-the-week__subtitle">Товар недели</h3>
-            <p class="goods-of-the-week__description">
-                Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах
-            </p>
-            <table class="goods-of-the-week__properties">
-                <tbody>
-                <tr>
-                    <td>Цвет:</td>
-                    <td>"Тиффари/серый"</td>
-                </tr>
-                <tr>
-                    <td>Диаметр:</td>
-                    <td>25 см</td>
-                </tr>
-                <tr>
-                    <td>Высота:</td>
-                    <td>15 см</td>
-                </tr>
-                </tbody>
-            </table>
-            <figure class="goods-of-the-week__figure">
-                <img src="./images/index/triple-set-mobile.png" alt="">
+    <section class="brand">
+        <article class="brand__logo">
+            <figure class="brand__figure">
+                <img src="./images/index/hero-mobile.png" alt="Брендовая картинка">
             </figure>
-            <p class="goods-of-the-week__price">Цена: 990 руб.</p>
-            <a class="btn" href="#">Заказать</a>
-        </div>
+            <h2 class="brand__title">Милые штуки ручной работы для дома</h2>
+        </article>
+        <article class="brand__item brand__item--light">
+            <p class="brand__item-description">Предметы интерьера</p>
+            <figure class="brand__item-figure">
+                <img class="brand__item-image" src="./images/index/lamp.svg" alt="Картинка интерьера">
+            </figure>
+        </article>
+        <article class="brand__item brand__item--darken">
+            <p class="brand__item-description">Детские игрушки</p>
+            <figure class="brand__item-figure">
+                <img class="brand__item-image" src="./images/index/lego.svg" alt="Картинка игрушек">
+            </figure>
+        </article>
+    </section>
+
+
+    <section class="goods-of-the-week">
+        <h2 class="goods-of-the-week__title">Вязаные корзинки</h2>
+        <h3 class="goods-of-the-week__subtitle">Товар недели</h3>
+        <p class="goods-of-the-week__description">
+            Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах
+        </p>
+        <table class="goods-of-the-week__properties">
+            <tbody>
+            <tr>
+                <td>Цвет:</td>
+                <td>"Тиффари/серый"</td>
+            </tr>
+            <tr>
+                <td>Диаметр:</td>
+                <td>25 см</td>
+            </tr>
+            <tr>
+                <td>Высота:</td>
+                <td>15 см</td>
+            </tr>
+            </tbody>
+        </table>
+        <figure class="goods-of-the-week__figure">
+            <img src="./images/index/triple-set-mobile.png" alt="">
+        </figure>
+        <p class="goods-of-the-week__price">Цена: 990 руб.</p>
+        <a class="btn" href="#">Заказать</a>
     </section>
 
     <section class="about">
-        <div class="inner-wrapper"><h2 class="about__title">Коротко о нас</h2>
-            <article class="about__item">
-                <figure class="about__image">
+        <h2 class="about__title">Коротко о нас</h2>
+        <div class="about-advantages">
+            <article class="about-advantages__item">
+                <figure class="about-advantages__figure">
                     <img src="./images/index/1.svg" alt="Экологично">
                 </figure>
-                <p class="about__description">Экологичеки чистые материалы</p>
+                <p class="about-advantages__description">Экологичеки чистые материалы</p>
             </article>
-            <article class="about__item">
-                <figure class="about__image">
+            <article class="about-advantages__item">
+                <figure class="about-advantages__figure">
                     <img src="./images/index/2.svg" alt="Стильно">
                 </figure>
-                <p class="about__description">Скандинавский стиль по российской цене</p>
+                <p class="about-advantages__description">Скандинавский стиль по российской цене</p>
             </article>
-            <article class="about__item">
-                <figure class="about__image">
+            <article class="about-advantages__item">
+                <figure class="about-advantages__figure">
                     <img src="./images/index/3.svg" alt="Хайпово">
                 </figure>
-                <p class="about__description">Увеличивает лайки на фотографиях</p>
+                <p class="about-advantages__description">Увеличивает лайки на фотографиях</p>
             </article>
-            <article class="about__item">
-                <figure class="about__image">
+            <article class="about-advantages__item">
+                <figure class="about-advantages__figure">
                     <img src="./images/index/4.svg" alt="С любовью и умилением">
                 </figure>
-                <p class="about__description">Связано вручную с любовью и умилением</p>
+                <p class="about-advantages__description">Связано вручную с любовью и умилением</p>
             </article>
-            <article class="about__item">
-                <figure class="about__image">
+            <article class="about-advantages__item">
+                <figure class="about-advantages__figure">
                     <img src="./images/index/5.svg" alt="Поддержи наших!">
                 </figure>
-                <p class="about__description">Поддержка отечественного производителя</p>
+                <p class="about-advantages__description">Поддержка отечественного производителя</p>
             </article>
-            <article class="about__item">
-                <figure class="about__image">
+            <article class="about-advantages__item">
+                <figure class="about-advantages__figure">
                     <img src="./images/index/6.svg" alt="В упоковке">
                 </figure>
-                <p class="about__description">Поставляется в подарочной упаковке</p>
+                <p class="about-advantages__description">Поставляется в подарочной упаковке</p>
             </article>
         </div>
     </section>
 
     <section class="comments">
-        <div class="inner-wrapper"><h2 class="comments__title">Отзывы</h2>
-            <article class="comments__item">
-                <p class="comments__feedback">
-                    Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у
-                    популярных
-                    инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали
-                    более
-                    стильнее, а также набирают больше лайков!
-                </p>
-                <p class="comments__author-name">Анастасия Красильникова</p>
-                <p class="comments__author-username">@missssikras</p>
-            </article>
-            <div class="arrow-buttons">
-                <a class="btn arrow-buttons__btn--left" href="#"><span class="arrow-buttons__left-arrow"></span></a>
-                <a class="btn arrow-buttons__btn--right" href="#"><span class="arrow-buttons__right-arrow"></span></a>
-            </div>
-            <a class="btn" href="#">Написать</a>
+        <h2 class="comments__title">Отзывы</h2>
+        <article class="comments__item">
+            <p class="comments__feedback">
+                Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у
+                популярных
+                инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали
+                более
+                стильнее, а также набирают больше лайков!
+            </p>
+            <p class="comments__author-name">Анастасия Красильникова</p>
+            <p class="comments__author-username">@missssikras</p>
+        </article>
+        <div class="arrow-buttons">
+            <a class="btn arrow-buttons__btn" href="#"><span class="arrow-buttons__left-arrow"></span></a>
+            <a class="btn arrow-buttons__btn" href="#"><span class="arrow-buttons__right-arrow"></span></a>
         </div>
+        <a class="btn comments__btn" href="#">Написать</a>
     </section>
 
     <section class="address">
-
         <div class="contacts">
-            <div class="inner-wrapper">
-                <h2 class="contacts__title">Контакты</h2>
-                <table class="contacts__qualification">
-                    <tbody>
-                    <tr class="contacts__email">
-                        <td>e-main:</td>
-                        <td>info@mimimishkashop.ru</td>
-                    </tr>
-                    <tr class="contacts__address">
-                        <td>адрес:</td>
-                        <td>г.Санкт-Петербург,<br/>ул.Большая Конюшенная,<br/>д. 19/8, офис 101</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2 class="contacts__title">Контакты</h2>
+            <table class="contacts__qualification">
+                <tbody>
+                <tr class="contacts__email">
+                    <td>e-mail:</td>
+                    <td>info@mimimishkashop.ru</td>
+                </tr>
+                <tr class="contacts__address">
+                    <td>адрес:</td>
+                    <td>г.Санкт-Петербург,<br/>ул.Большая Конюшенная,<br/>д. 19/8, офис 101</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <div class="map">
             <figure class="map__figure">
                 <img src="./images/index/map-tablet.jpg" alt="Карта">
             </figure>
         </div>
-
         <div class="write-to-us">
-            <div class="inner-wrapper">
-                <a class="btn" href="#">Напишите нам</a>
-            </div>
+            <a class="btn" href="#">Напишите нам</a>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="inner-wrapper">
-            <div class="footer__flex-container">
-
-                <div class="social-links">
-
-                    <a class="social-links__btn" href="#"><img src="./images/common/instagram.svg" alt="Инстаграм"></a>
-                    <a class="social-links__btn" href="#"><img src="./images/common/facebook.svg" alt="Фейсбук"></a>
-                    <a class="social-links__btn" href="#"><img src="./images/common/twitter.svg" alt="Твитер"></a>
-                </div>
-
-                <div class="designer">
-                    <p class="designer__description">Разработано</p>
-                    <figure class="designer__figure"><img class="designer__image" src="./images/common/htmlacademy.svg"
-                                                          alt=""></figure>
-                </div>
+            <div class="social-links">
+                <a class="social-links__btn" href="#"><img src="./images/common/instagram.svg" alt="Инстаграм"></a>
+                <a class="social-links__btn" href="#"><img src="./images/common/facebook.svg" alt="Фейсбук"></a>
+                <a class="social-links__btn" href="#"><img src="./images/common/twitter.svg" alt="Твитер"></a>
             </div>
-        </div>
+            <div class="designer">
+                <p class="designer__description">Разработано</p>
+                <figure class="designer__figure">
+                    <img class="designer__image" src="./images/common/htmlacademy.svg" alt="">
+                </figure>
+            </div>
     </footer>
 </div>
-
+<script src="./js/index.js"></script>
 </body>
 </html>

@@ -6,6 +6,10 @@
   font-family: 'Open Sans';
   font-weight: bold;
   src: url("../fonts/OpenSans-Bold.ttf"); }
+.page {
+  margin: 0;
+  padding: 0; }
+
 .page-wrapper {
   width: 320px;
   margin: 0 auto; }
@@ -14,18 +18,24 @@
   width: 260px;
   margin: 0 auto; }
 
+* {
+  box-sizing: border-box; }
+
 h2 {
-  font: bold 24px Verdana, sans-serif; }
+  font: bold 23px Verdana, sans-serif;
+  margin: 0;
+  padding: 0; }
 
 h3 {
-  font: bold 16px "Open Sans", sans-serif; }
+  font: bold 16px "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0; }
 
 .btn {
   display: inline-block;
   width: 100%;
   height: 50px;
   text-align: center;
-  box-sizing: border-box;
   padding-top: 12px;
   font: bold 16px "Open Sans", sans-serif;
   color: black;
@@ -38,75 +48,122 @@ h3 {
 .menu__list {
   display: flex;
   padding: 0;
+  margin: 0;
   flex-direction: column;
-  list-style: none; }
+  list-style: none;
+  transition-duration: 1s;
+  transition-delay: 0.1s;
+  max-height: 500px; }
+
+.menu__list--hidden {
+  max-height: 0;
+  opacity: 0; }
 
 .menu__item-image {
-  float: left; }
+  position: absolute;
+  left: 40px; }
 
-.menu__item {
+.menu__item,
+.logo {
   flex-basis: 80px;
   line-height: 80px;
-  border-top: 1px solid grey;
-  text-align: center; }
-  .menu__item:last-child {
-    border-bottom: 1px solid grey; }
+  border-top: 1px solid rgba(128, 128, 128, 0.32); }
+
+.menu__item {
+  transition-duration: 0.5s;
+  max-height: 200px; }
+
+.menu__item--hidden {
+  transform: translateX(100px);
+  opacity: 0; }
 
 .menu__link {
+  position: relative;
+  padding-left: 90px;
   width: 100%;
   display: inline-block;
   font: bold 16px Verdana, sans-serif;
   color: black;
   text-decoration: none; }
 
-.logo {
+.menu__logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid rgba(128, 128, 128, 0.32);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.32); }
+
+.menu__logo-image {
+  width: 90px; }
+
+.menu__button {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 21px;
+  top: 30px;
+  right: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(white 60%, transparent 40%);
+  background-size: 0.5em 0.5em;
+  background-color: black; }
+
+.bran {
+  display: flex;
+  flex-flow: column; }
+
+.brand__logo {
   position: relative; }
 
-.logo__figure {
+.brand__figure {
   padding: 0;
-  margin: 0; }
+  margin: 0 0 -5px 0; }
 
-.logo__title {
+.brand__title {
   position: absolute;
   top: 90px;
   left: 40px;
   width: 240px;
   text-align: center; }
 
-.goods__item-01,
-.goods__item-02 {
-  box-sizing: border-box;
-  padding-top: 10px;
+.brand__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
   min-height: 105px;
   font: bold 18px Tahoma, sans-serif;
   color: white; }
 
-.goods__item-01:after,
-.goods__item-02:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.goods__description {
-  float: left;
-  width: 60%; }
-
-.goods__figure {
-  float: right;
+.brand__item-figure {
+  flex-basis: 50%;
+  padding: 0;
   margin: 0;
-  padding: 15px;
-  width: 20%; }
+  text-align: right; }
 
-.goods__image {
+.brand__item-image {
   width: 40px; }
 
-.goods__item-01 {
+.brand__item--light {
   background-color: #63d1bb; }
 
-.goods__item-02 {
+.brand__item--darken {
   background-color: #56c3b2; }
 
+.goods-of-the-week {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
 .goods-of-the-week__subtitle {
+  margin-top: 10px;
   color: #63d1bb;
   text-transform: uppercase; }
 
@@ -133,39 +190,59 @@ h3 {
 .goods-of-the-week__price {
   text-align: center; }
 
-.about__image {
-  margin: 0; }
+.about {
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 30px; }
 
-.about__description {
+.about:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background: url("../images/index/Zigzag.svg") repeat-x;
+  background-size: 100%; }
+
+.about-advantages {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px; }
+
+.about-advantages__figure {
+  margin: 0;
+  padding: 0; }
+
+.about-advantages__description {
   font: bold 16px Verdana, sans-serif; }
+
+.comments {
+  padding-left: 30px;
+  padding-right: 30px; }
 
 .comments__author-name {
   font-weight: bold; }
 
 .arrow-buttons {
-  margin: 40px 0; }
-
-.arrow-buttons:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.arrow-buttons__btn--left {
-  float: left;
-  width: 50%;
+  display: flex;
   height: 50px; }
 
-.arrow-buttons__btn--right {
-  float: right;
+.arrow-buttons__btn {
   width: 50%;
-  height: 50px; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; }
 
 .arrow-buttons__left-arrow,
 .arrow-buttons__right-arrow {
-  width: 70%;
-  height: 70%;
-  display: inline-block;
-  background-color: #000; }
+  width: 50%;
+  height: 30%;
+  background-color: black; }
 
 .arrow-buttons__left-arrow {
   clip-path: polygon(40% 0%, 41% 35%, 100% 35%, 100% 65%, 40% 65%, 40% 100%, 0% 50%); }
@@ -176,8 +253,26 @@ h3 {
 .comments__feedback {
   line-height: 2rem; }
 
+.comments__btn {
+  margin-top: 35px; }
+
 .contacts {
-  margin: 40px 0; }
+  padding-top: 45px;
+  position: relative;
+  margin: 40px 0;
+  padding-left: 30px;
+  padding-right: 30px; }
+
+.contacts:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background: url("../images/index/Zigzag.svg") repeat-x;
+  background-size: 100%; }
 
 .contacts__title {
   padding: 0;
@@ -193,18 +288,19 @@ h3 {
   text-align: left; }
 
 .write-to-us {
-  min-height: 130px;
-  box-sizing: border-box;
-  padding: 40px 0; }
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px; }
 
 .map__figure {
   padding: 0;
   margin: 0; }
 
 .footer {
-  background-color: #f1f1f1; }
-
-.footer__flex-container {
+  background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
   align-items: center; }
