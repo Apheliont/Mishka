@@ -119,15 +119,7 @@ h3 {
   margin: 0;
   flex-direction: column;
   list-style: none;
-  transition-duration: 1s;
-  transition-delay: 0.1s;
-  max-height: 500px;
   overflow: hidden;
-}
-
-.menu__list--hidden {
-  max-height: 0;
-  opacity: 0;
 }
 
 .menu__item-image {
@@ -143,8 +135,7 @@ h3 {
 }
 
 .menu__item {
-  transition-duration: 0.5s;
-  max-height: 200px;
+  transition-duration: 0.3s;
 }
 
 .menu__item--hidden {
